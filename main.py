@@ -19,7 +19,7 @@ for html_file in os.listdir(folder_name):
 # xlsxwriter enine is used due to the existence of Unicode characters
 df = pd.DataFrame(df_list, columns=['Quote','Category','Author'])
 df = df.applymap(lambda x: x.encode('unicode_escape').
-                 decode('utf-8') if isinstance(x, str) else x)
+                 decode('utf-8') if isinstance(x, str) else x) #Source: stackoverflow
 
 df.to_csv('quotes.csv', encoding='UTF-8')
 # Encoding: UTF-8 - is the most popular encoding of web pages
